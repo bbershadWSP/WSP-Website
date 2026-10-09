@@ -1,5 +1,5 @@
 import importedPhotos from './photo-collections.json' with {type:'json'};
-export const business = {name:'Warrior Sports Performance', phone:'508-528-8930', email:'info@warriorsportsperformance.com', address:'124 Main Street, Norfolk, MA 02056', instagram:'https://www.instagram.com/wsp_norfolk/', maps:'https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJcTYjVQV75IkR6TBbBtueEpg'};
+export const business = {name:'Warrior Sports Performance', phone:'508-528-8930', email:'info@warriorsportsperformance.com', address:'124 Main Street, Norfolk, MA 02056', instagram:'https://www.instagram.com/wsp_norfolk/', facebook:'https://www.facebook.com/p/Warrior-Sports-Performance-61591008237101/', maps:'https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJcTYjVQV75IkR6TBbBtueEpg'};
 export const photos = {
  logo:'/images/6a3ad7ab109a1ab49ddbed47.webp', logoWhite:'/images/6a4c0f3cb7c041f1896f1e92.webp',
  coach:'/images/6a7b34df0faacaac56f31daf.webp', facility:'/images/6a7b34e64e002388f4309b70.webp',

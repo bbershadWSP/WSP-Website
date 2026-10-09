@@ -17,3 +17,5 @@
 .program-card[href$="#adult-strength"] .card-photo img{object-position:center top}#adult-strength img{height:auto;aspect-ratio:3/4;object-fit:contain;object-position:center top}
 
 .program-card[href$="#team-training"] .card-photo img{object-fit:cover;object-position:center;background:transparent}#team-training img{object-fit:cover;object-position:center;background:transparent}
+
+.contact-socials{display:flex;flex-wrap:wrap;gap:16px 24px}
