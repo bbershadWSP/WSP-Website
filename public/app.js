@@ -2,7 +2,13 @@ const toggle=document.querySelector('.menu-toggle');
 const nav=document.querySelector('#site-nav');
 toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open);});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle?.getAttribute('aria-expanded')==='true'){toggle.setAttribute('aria-expanded','false');nav.classList.remove('open');toggle.focus();}});
-document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});let count=0;document.querySelectorAll('.gallery-item').forEach(item=>{item.hidden=button.dataset.filter!=='All'&&item.dataset.category!==button.dataset.filter;if(!item.hidden)count++;});document.querySelector('#gallery-status').textContent=`Showing ${count} photos`; }));
+const galleryItems=[...document.querySelectorAll('.gallery-item')];
+let galleryFilter='All',galleryLimit=24;
+const morePhotos=document.querySelector('#gallery-more');
+function updateGallery(){const matching=galleryItems.filter(item=>galleryFilter==='All'||item.dataset.category===galleryFilter);const shown=new Set(matching.slice(0,galleryLimit));galleryItems.forEach(item=>item.hidden=!shown.has(item));const status=document.querySelector('#gallery-status');if(status)status.textContent='Showing '+shown.size+' of '+matching.length+' photos';if(morePhotos)morePhotos.hidden=shown.size>=matching.length;}
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{galleryFilter=button.dataset.filter;galleryLimit=24;document.querySelectorAll('.filter').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});updateGallery();}));
+morePhotos?.addEventListener('click',()=>{const firstNew=galleryItems.filter(item=>galleryFilter==='All'||item.dataset.category===galleryFilter)[galleryLimit];galleryLimit+=24;updateGallery();firstNew?.focus({preventScroll:true});});
+updateGallery();
 const dialog=document.querySelector('#lightbox');
 document.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>{const img=dialog.querySelector('img');img.src=item.querySelector('img').src;img.alt=item.dataset.caption;dialog.querySelector('p').textContent=item.dataset.caption;dialog.showModal();}));
 dialog?.querySelector('button').addEventListener('click',()=>dialog.close());

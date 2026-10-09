@@ -7,3 +7,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 @media(max-width:360px){.manifesto-bar{font-size:14px;letter-spacing:0;gap:4px;padding:15px 10px}.manifesto-bar i{font-size:9px}.hero h1{font-size:82px}.topline .wrap>span{max-width:205px}}
+
+.filters{flex-wrap:wrap}.gallery-more{margin-top:28px}
