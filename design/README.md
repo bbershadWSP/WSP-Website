@@ -15,3 +15,7 @@ Sources:
 - W3C contrast minimum: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum
 
 Actual site change: homepage feature band and header strapline now say Strength, Speed, Power. Palette concepts are not yet applied to the actual site.
+
+## Selected palette
+
+The owner selected Option 03, Black & Carolina. Applied across the production site: near-black #151515, Carolina athletics blue #7BAFD4, neutral background #F5F6F7, and slate body text #545B62. Updated gradients, buttons, footer, forms, borders, focus accents, favicon, and browser theme color. Homepage spacing remains the full site layout.
