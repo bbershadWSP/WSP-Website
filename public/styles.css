@@ -22,3 +22,9 @@
 
 /* Keep the athlete and hurdles in frame on the Sports Performance card. */
 .program-card[href$="#sports-performance"] .card-photo img{object-position:44% center}
+/* Subtle exposure treatment preserves the original documentary photograph. */
+.program-card[href$="#sports-performance"] .card-photo{overflow:hidden}
+.program-card[href$="#sports-performance"] .card-photo img{filter:brightness(.92);transform:scale(1.06);transform-origin:50% 100%;object-position:44% bottom}
+.program-card[href$="#sports-performance"]:hover .card-photo img{transform:scale(1.09)}
+#sports-performance{overflow:hidden}
+#sports-performance img{filter:brightness(.92);object-position:center bottom;clip-path:inset(5% 0 0 0)}
