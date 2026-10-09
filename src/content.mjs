@@ -16,4 +16,4 @@ const originalGallery = [
 ].map(([id,caption,category])=>({src:`/images/${id}.webp`,caption,category}));
 
 const importedSources=new Set(importedPhotos.map(p=>p.src));
-export const gallery=[...importedPhotos,...originalGallery.filter(p=>!importedSources.has(p.src))];
+export const gallery=[...importedPhotos.filter(photo=>!photo.hidden),...originalGallery.filter(p=>!importedSources.has(p.src))];

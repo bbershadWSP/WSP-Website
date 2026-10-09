@@ -10,7 +10,7 @@ document.querySelectorAll('.filter').forEach(button=>button.addEventListener('cl
 morePhotos?.addEventListener('click',()=>{const firstNew=galleryItems.filter(item=>galleryFilter==='All'||item.dataset.category===galleryFilter)[galleryLimit];galleryLimit+=24;updateGallery();firstNew?.focus({preventScroll:true});});
 updateGallery();
 const dialog=document.querySelector('#lightbox');
-document.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>{const img=dialog.querySelector('img');img.src=item.querySelector('img').src;img.alt=item.dataset.caption;dialog.querySelector('p').textContent=item.dataset.caption;dialog.showModal();}));
+document.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>{const img=dialog.querySelector('img');img.src=item.querySelector('img').src;img.alt=item.dataset.caption;dialog.showModal();}));
 dialog?.querySelector('button').addEventListener('click',()=>dialog.close());
 dialog?.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
 const form=document.querySelector('#inquiry-form');

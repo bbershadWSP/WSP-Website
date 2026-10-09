@@ -6,47 +6,51 @@
   },
   {
     "src": "/images/6a8892b70f0af3d896e7ffcb.webp",
-    "caption": "College athletes warming up together",
-    "category": "College group"
+    "caption": "College group warm-up in black and white",
+    "category": "College group",
+    "hidden": true
   },
   {
     "src": "/images/6a8892bfcf8e7bbe023cc86f.webp",
-    "caption": "College group movement preparation",
-    "category": "College group"
+    "caption": "Coach demonstrating a hurdle drill in black and white",
+    "category": "College group",
+    "hidden": true
   },
   {
     "src": "/images/college-004.webp",
-    "caption": "Resistance-band face pull",
-    "category": "College group"
+    "caption": "Resistance-band face pull in black and white",
+    "category": "College group",
+    "hidden": true
   },
   {
     "src": "/images/6a8892d589b07815ed26bb4f.webp",
-    "caption": "Resistance-band face pull in black and white",
-    "category": "College group"
-  },
-  {
-    "src": "/images/college-006.webp",
     "caption": "Half-kneeling overhead press",
     "category": "College group"
   },
   {
-    "src": "/images/college-007.webp",
-    "caption": "College group warming up on the turf",
+    "src": "/images/college-006.webp",
+    "caption": "College group warm-up",
     "category": "College group"
   },
   {
-    "src": "/images/6a8892f2cdd4b797a3422628.webp",
+    "src": "/images/college-007.webp",
     "caption": "Athlete jumping over a hurdle",
     "category": "College group"
   },
   {
-    "src": "/images/6a8892b70f0af3d896e7ffcb.webp",
-    "caption": "Coach demonstrating lateral movement",
+    "src": "/images/6a8892f2cdd4b797a3422628.webp",
+    "caption": "Resisted lateral movement drill",
     "category": "College group"
   },
   {
-    "src": "/images/6a8892c68de0ce2c600e0f58.webp",
+    "src": "/images/6a8892b70f0af3d896e7ffcb.webp",
     "caption": "College group warm-up in black and white",
+    "category": "College group",
+    "hidden": true
+  },
+  {
+    "src": "/images/6a8892c68de0ce2c600e0f58.webp",
+    "caption": "Resistance-band face pull",
     "category": "College group"
   },
   {
@@ -72,7 +76,8 @@
   {
     "src": "/images/6a88932a3556614796ad3428.webp",
     "caption": "Incline bench press in black and white",
-    "category": "College group"
+    "category": "College group",
+    "hidden": true
   },
   {
     "src": "/images/college-016.webp",
@@ -87,7 +92,8 @@
   {
     "src": "/images/6a88930dcf8e7bbe023d1387.webp",
     "caption": "Coach assisting a barbell squat",
-    "category": "College group"
+    "category": "College group",
+    "hidden": true
   },
   {
     "src": "/images/college-019.webp",
@@ -107,12 +113,14 @@
   {
     "src": "/images/gut-camp-001.webp",
     "caption": "Coach leading an outdoor movement drill",
-    "category": "GUT Camp"
+    "category": "GUT Camp",
+    "hidden": true
   },
   {
     "src": "/images/gut-camp-002.webp",
     "caption": "Barbell squat in black and white",
-    "category": "GUT Camp"
+    "category": "GUT Camp",
+    "hidden": true
   },
   {
     "src": "/images/6a7c995d9ccc6ec6ccf078df.webp",
@@ -122,42 +130,50 @@
   {
     "src": "/images/gut-camp-004.webp",
     "caption": "Incline dumbbell press",
-    "category": "GUT Camp"
+    "category": "GUT Camp",
+    "hidden": true
   },
   {
     "src": "/images/gut-camp-005.webp",
     "caption": "Coach guiding the training group",
-    "category": "GUT Camp"
+    "category": "GUT Camp",
+    "hidden": true
   },
   {
     "src": "/images/6a7c98f4f6ac3438f81a97cf.webp",
     "caption": "Single-arm dumbbell row",
-    "category": "GUT Camp"
+    "category": "GUT Camp",
+    "hidden": true
   },
   {
     "src": "/images/6a7c98d449a432c9162afcd8.webp",
     "caption": "Barbell strength work",
-    "category": "GUT Camp"
+    "category": "GUT Camp",
+    "hidden": true
   },
   {
     "src": "/images/6a7c98921eb55bdfc3912f21.webp",
     "caption": "Practicing a front squat",
-    "category": "GUT Camp"
+    "category": "GUT Camp",
+    "hidden": true
   },
   {
     "src": "/images/6a7c99851eb55bdfc3922d93.webp",
     "caption": "Barbell technique practice",
-    "category": "GUT Camp"
+    "category": "GUT Camp",
+    "hidden": true
   },
   {
     "src": "/images/gut-camp-010.webp",
     "caption": "Incline dumbbell press in black and white",
-    "category": "GUT Camp"
+    "category": "GUT Camp",
+    "hidden": true
   },
   {
     "src": "/images/gut-camp-011.webp",
     "caption": "Coach assisting a bench press",
-    "category": "GUT Camp"
+    "category": "GUT Camp",
+    "hidden": true
   },
   {
     "src": "/images/gut-camp-012.webp",
