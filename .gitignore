@@ -5,5 +5,6 @@ dist/
 !.env.example
 migration/*.html
 migration/contact-sheet*
+review/
 public/assets/*
 !public/assets/.gitkeep
