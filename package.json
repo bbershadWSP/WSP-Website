@@ -1,0 +1,8 @@
+{
+  "name": "wsp-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"build": "node scripts/build.mjs", "dev": "node scripts/serve.mjs", "test": "node --test tests/*.test.mjs"},
+  "devDependencies": {"sharp": "^0.34.0", "cheerio": "^1.1.0"}
+}

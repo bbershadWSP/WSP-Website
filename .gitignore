@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vercel/
+.env*
+!.env.example
+migration/*.html
+migration/contact-sheet*
+public/assets/*
+!public/assets/.gitkeep
