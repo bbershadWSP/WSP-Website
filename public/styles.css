@@ -19,3 +19,6 @@
 .program-card[href$="#team-training"] .card-photo img{object-fit:cover;object-position:center;background:transparent}#team-training img{object-fit:cover;object-position:center;background:transparent}
 
 .contact-socials{display:flex;flex-wrap:wrap;gap:16px 24px}
+
+/* Keep the athlete and hurdles in frame on the Sports Performance card. */
+.program-card[href$="#sports-performance"] .card-photo img{object-position:44% center}

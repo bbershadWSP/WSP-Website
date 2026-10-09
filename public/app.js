@@ -3,11 +3,11 @@ const nav=document.querySelector('#site-nav');
 toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open);});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle?.getAttribute('aria-expanded')==='true'){toggle.setAttribute('aria-expanded','false');nav.classList.remove('open');toggle.focus();}});
 const galleryItems=[...document.querySelectorAll('.gallery-item')];
-let galleryFilter='All',galleryLimit=24;
+let galleryFilter='All WSP Photos',galleryLimit=24;
 const morePhotos=document.querySelector('#gallery-more');
-function updateGallery(){const matching=galleryItems.filter(item=>galleryFilter==='All'||item.dataset.category===galleryFilter);const shown=new Set(matching.slice(0,galleryLimit));galleryItems.forEach(item=>item.hidden=!shown.has(item));const status=document.querySelector('#gallery-status');if(status)status.textContent='Showing '+shown.size+' of '+matching.length+' photos';if(morePhotos)morePhotos.hidden=shown.size>=matching.length;}
+function updateGallery(){const campNote=document.querySelector('#camp-context');if(campNote)campNote.hidden=galleryFilter!=='GUT Camp';const matching=galleryItems.filter(item=>galleryFilter==='All WSP Photos'?item.dataset.category!=='GUT Camp':item.dataset.category===galleryFilter);const shown=new Set(matching.slice(0,galleryLimit));galleryItems.forEach(item=>item.hidden=!shown.has(item));const status=document.querySelector('#gallery-status');if(status)status.textContent='Showing '+shown.size+' of '+matching.length+' photos';if(morePhotos)morePhotos.hidden=shown.size>=matching.length;}
 document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{galleryFilter=button.dataset.filter;galleryLimit=24;document.querySelectorAll('.filter').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});updateGallery();}));
-morePhotos?.addEventListener('click',()=>{const firstNew=galleryItems.filter(item=>galleryFilter==='All'||item.dataset.category===galleryFilter)[galleryLimit];galleryLimit+=24;updateGallery();firstNew?.focus({preventScroll:true});});
+morePhotos?.addEventListener('click',()=>{const firstNew=galleryItems.filter(item=>galleryFilter==='All WSP Photos'?item.dataset.category!=='GUT Camp':item.dataset.category===galleryFilter)[galleryLimit];galleryLimit+=24;updateGallery();firstNew?.focus({preventScroll:true});});
 updateGallery();
 const dialog=document.querySelector('#lightbox');
 document.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>{const img=dialog.querySelector('img');img.src=item.querySelector('img').src;img.alt=item.dataset.caption;dialog.showModal();}));
