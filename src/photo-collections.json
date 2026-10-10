@@ -123,8 +123,8 @@
     "hidden": true
   },
   {
-    "src": "/images/6a7c995d9ccc6ec6ccf078df.webp",
-    "caption": "Athlete practicing a squat",
+    "src": "/images/gut-camp-027.webp",
+    "caption": "Running drill at camp",
     "category": "GUT Camp"
   },
   {
@@ -176,73 +176,8 @@
     "hidden": true
   },
   {
-    "src": "/images/gut-camp-012.webp",
-    "caption": "Outdoor mobility warm-up",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-013.webp",
-    "caption": "Coach leading the field session",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/6a7c987b9ccc6ec6ccef7ad8.webp",
-    "caption": "Athletes listening to their coach",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/6a7c9866692706e1499ff6d5.webp",
-    "caption": "Outdoor training instruction",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/6a7c989af6ac3438f81a68f3.webp",
-    "caption": "Coach demonstrating a lunge",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-017.webp",
-    "caption": "Coach demonstrating movement on the field",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-018.webp",
-    "caption": "Camp athletes warming up",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-019.webp",
-    "caption": "Group mobility work on the field",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-020.webp",
-    "caption": "Outdoor warm-up with the camp group",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-021.webp",
-    "caption": "Camp athletes preparing to train",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-022.webp",
-    "caption": "Group warm-up across the field",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/6a7c98a49ccc6ec6ccefaf9c.webp",
-    "caption": "Athlete accelerating on the field",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-024.webp",
-    "caption": "Athletes working on speed",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/6a7c98cca6a03cda062b8cfc.webp",
-    "caption": "Coach guiding an outdoor drill",
+    "src": "/images/gut-camp-030.webp",
+    "caption": "Athletes running on the field",
     "category": "GUT Camp"
   },
   {
@@ -251,23 +186,13 @@
     "category": "GUT Camp"
   },
   {
-    "src": "/images/gut-camp-027.webp",
-    "caption": "Running drill at camp",
+    "src": "/images/gut-camp-019.webp",
+    "caption": "Group mobility work on the field",
     "category": "GUT Camp"
   },
   {
-    "src": "/images/gut-camp-028.webp",
-    "caption": "Athletes working together outside",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-029.webp",
-    "caption": "Coach guiding a sprint drill",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-030.webp",
-    "caption": "Athletes running on the field",
+    "src": "/images/6a7c98a49ccc6ec6ccefaf9c.webp",
+    "caption": "Athlete accelerating on the field",
     "category": "GUT Camp"
   },
   {
@@ -276,8 +201,28 @@
     "category": "GUT Camp"
   },
   {
-    "src": "/images/gut-camp-032.webp",
-    "caption": "Camp group across the training field",
+    "src": "/images/6a7c9866692706e1499ff6d5.webp",
+    "caption": "Outdoor training instruction",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/6a7c992cb1a56ba929f1b6ce.webp",
+    "caption": "Athlete practicing a change of direction",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/gut-camp-024.webp",
+    "caption": "Athletes working on speed",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/gut-camp-028.webp",
+    "caption": "Athletes working together outside",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/gut-camp-020.webp",
+    "caption": "Outdoor warm-up with the camp group",
     "category": "GUT Camp"
   },
   {
@@ -291,6 +236,26 @@
     "category": "GUT Camp"
   },
   {
+    "src": "/images/gut-camp-012.webp",
+    "caption": "Outdoor mobility warm-up",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/6a7c98cca6a03cda062b8cfc.webp",
+    "caption": "Coach guiding an outdoor drill",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/gut-camp-029.webp",
+    "caption": "Coach guiding a sprint drill",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/gut-camp-032.webp",
+    "caption": "Camp group across the training field",
+    "category": "GUT Camp"
+  },
+  {
     "src": "/images/gut-camp-035.webp",
     "caption": "Camp group at the training facility",
     "category": "GUT Camp"
@@ -301,28 +266,18 @@
     "category": "GUT Camp"
   },
   {
-    "src": "/images/6a7c992cb1a56ba929f1b6ce.webp",
-    "caption": "Athlete practicing a change of direction",
-    "category": "GUT Camp"
-  },
-  {
-    "src": "/images/gut-camp-038.webp",
-    "caption": "Coach instructing the gym group",
-    "category": "GUT Camp"
-  },
-  {
     "src": "/images/6a7c9921b56fd623bd9c0d50.webp",
     "caption": "Barbell squat practice",
     "category": "GUT Camp"
   },
   {
-    "src": "/images/6a7c98eb692706e149a07b4d.webp",
-    "caption": "Incline dumbbell strength work",
+    "src": "/images/6a7c989af6ac3438f81a68f3.webp",
+    "caption": "Coach demonstrating a lunge",
     "category": "GUT Camp"
   },
   {
-    "src": "/images/6a7c990549a432c9162b0a75.webp",
-    "caption": "Coach guiding a gym session",
+    "src": "/images/6a7c98eb692706e149a07b4d.webp",
+    "caption": "Incline dumbbell strength work",
     "category": "GUT Camp"
   },
   {
@@ -348,6 +303,11 @@
   {
     "src": "/images/gut-camp-046.webp",
     "caption": "Barbell technique training",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/gut-camp-013.webp",
+    "caption": "Coach leading the field session",
     "category": "GUT Camp"
   },
   {
@@ -381,6 +341,11 @@
     "category": "GUT Camp"
   },
   {
+    "src": "/images/gut-camp-017.webp",
+    "caption": "Coach demonstrating movement on the field",
+    "category": "GUT Camp"
+  },
+  {
     "src": "/images/gut-camp-053.webp",
     "caption": "Athlete training on the incline bench",
     "category": "GUT Camp"
@@ -411,6 +376,11 @@
     "category": "GUT Camp"
   },
   {
+    "src": "/images/6a7c987b9ccc6ec6ccef7ad8.webp",
+    "caption": "Athletes listening to their coach",
+    "category": "GUT Camp"
+  },
+  {
     "src": "/images/gut-camp-059.webp",
     "caption": "Training with a dumbbell",
     "category": "GUT Camp"
@@ -428,6 +398,36 @@
   {
     "src": "/images/gut-camp-062.webp",
     "caption": "Athlete training at the facility",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/gut-camp-021.webp",
+    "caption": "Camp athletes preparing to train",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/gut-camp-022.webp",
+    "caption": "Group warm-up across the field",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/gut-camp-018.webp",
+    "caption": "Camp athletes warming up",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/gut-camp-038.webp",
+    "caption": "Coach instructing the gym group",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/6a7c990549a432c9162b0a75.webp",
+    "caption": "Coach guiding a gym session",
+    "category": "GUT Camp"
+  },
+  {
+    "src": "/images/6a7c995d9ccc6ec6ccf078df.webp",
+    "caption": "Athlete practicing a squat",
     "category": "GUT Camp"
   }
 ]
