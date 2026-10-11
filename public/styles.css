@@ -28,3 +28,6 @@
 .program-card[href$="#sports-performance"]:hover .card-photo img{transform:scale(1.09)}
 #sports-performance{overflow:hidden}
 #sports-performance img{filter:brightness(.92);object-position:center bottom;clip-path:inset(5% 0 0 0)}
+/* Show the complete WSP Approach group photo at every screen size. */
+.story-section .image-stack img{height:auto;object-fit:contain}
+.story-section .image-stack .image-label{position:static;display:block}
