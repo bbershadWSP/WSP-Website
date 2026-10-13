@@ -35,7 +35,9 @@ After the domain switches to Cloudflare:
 3. Verify page views and custom events in GA4 Realtime, checking for duplicate tags/events.
 4. Test FormSubmit activation, spam checks and inbox delivery. A submit event is only an attempt. Establish a confirmed provider-success signal before configuring a delivered-inquiry key event. Studio completion also needs a confirmed success signal; never count a booking-link click as completion.
 
-Live tracking checks, inquiry delivery and sitemap submission remain pending the domain switch. The existing Engage site was not modified. No recurring monitoring has been scheduled.
+Live verification completed October 13, 2026: Cloudflare nameservers are `carol.ns.cloudflare.com` and `owen.ns.cloudflare.com`; HTTPS works and www redirects to the apex. Google MX and SPF records are present; no DNS edits were made in this tracking setup. Search Console shows sitemap Success with 10 discovered pages, all returning HTTP 200. This is sitemap processing success, not a guarantee that all pages are indexed.
+
+Analytics deployment commit `a9f53fe` is on GitHub main, and live analytics.js/app.js match the committed source. A live page_view received HTTP 204 from Google's collection endpoint for `G-R6YB4B784B`. GA4 Realtime showed one active user, page_view, booking_link_click and inquiry_submit_attempt; no key-event conversion was recorded. The labeled test `WSP-GA4-LAUNCH-1013` passed FormSubmit's CAPTCHA and arrived in the info inbox at 1:27 p.m. New York time. Receipt was verified, but automatic delivered-inquiry conversion tracking is not configured; the existing form tracks attempts only. No actual Studio booking was made. The existing Engage site was not modified and no recurring monitoring has been scheduled.
 
 ## Editing
 
