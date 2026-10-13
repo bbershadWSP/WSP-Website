@@ -15,11 +15,6 @@
     "category": "Athletes"
   },
   {
-    "src": "/images/college-album-25.webp",
-    "caption": "Athlete performing a trap-bar deadlift at WSP",
-    "category": "Athletes"
-  },
-  {
     "src": "/images/wsp-training-0981.webp",
     "caption": "Athletes warming up together on the WSP turf",
     "category": "Athletes"
@@ -37,6 +32,11 @@
   {
     "src": "/images/wsp-training-1024.webp",
     "caption": "Athlete performing a weighted step-up at WSP",
+    "category": "Athletes"
+  },
+  {
+    "src": "/images/college-album-25.webp",
+    "caption": "Athlete performing a trap-bar deadlift at WSP",
     "category": "Athletes"
   },
   {
