@@ -47,3 +47,5 @@
 @media(max-width:480px){.topline .wrap>span,.topline span .top-separator,.top-contacts{font-size:8.82px}.hero .eyebrow{font-size:9.92px}}
 
 .hero p.trial-offer{color:var(--accent);font-weight:700;max-width:520px;margin-bottom:18px}
+
+.member-access{padding:24px 0;margin-bottom:24px;border-bottom:1px solid var(--line)}.member-access h2{font-size:30px}.member-access p{max-width:700px}.member-access .member-app-note{margin-top:20px;margin-bottom:10px}.member-access .actions{gap:12px 24px}.member-access .small{margin-top:16px;margin-bottom:0}.member-access .small a{text-decoration:underline}
