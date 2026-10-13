@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {business as b,photos as p,programs,gallery} from '../src/content.mjs';
 const siteUrl='https://warriorsportsperformance.com';
-const indexable=process.env.ENABLE_INDEXING==='true' && process.env.VERCEL_ENV==='production';
+const indexable=process.env.ENABLE_INDEXING==='true' && (process.env.CF_PAGES_BRANCH==='main'||process.env.VERCEL_ENV==='production');
 const out=path.resolve('dist');
 fs.mkdirSync(out,{recursive:true});fs.cpSync('public',out,{recursive:true,filter:s=>!s.includes(`${path.sep}assets`)});
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
