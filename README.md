@@ -22,6 +22,21 @@ Before domain changes save the complete Namecheap DNS zone, including A/AAAA/CNA
 
 Rollback: restore the prior website A/AAAA/CNAME records from the dated DNS backup; keep old hosting active. Keep Studio and Namecheap active. Confirm exact subscriptions and data exports with Ben before canceling anything.
 
+## Analytics and Search Console
+
+Owner: `bbershad@warriorsportsperformance.com`. Search Console domain ownership was auto-verified October 13, 2026 using existing DNS; no records were edited. GA4 account `411816447`, property `558745274` (WSP Website), stream `16121894906`, measurement ID `G-R6YB4B784B`. New York time, USD, optional Analytics emails and account data sharing off.
+
+`public/analytics.js` is included only in indexing-enabled production builds and checks for the HTTPS apex/www production domain. Local and Pages preview visits do not send data. Custom events: `booking_link_click`, `phone_click`, `email_click`, `inquiry_submit_attempt`. None represents completed booking or confirmed delivery, and no form fields are included. Automatic GA4 form interactions and site search are off.
+
+After the domain switches to Cloudflare:
+
+1. Check production `ENABLE_INDEXING=true`, canonical URLs, live robots.txt and nonempty sitemap.xml with current article routes.
+2. Submit `https://warriorsportsperformance.com/sitemap.xml` to the verified Search Console domain property, then verify Google's processing result.
+3. Verify page views and custom events in GA4 Realtime, checking for duplicate tags/events.
+4. Test FormSubmit activation, spam checks and inbox delivery. A submit event is only an attempt. Establish a confirmed provider-success signal before configuring a delivered-inquiry key event. Studio completion also needs a confirmed success signal; never count a booking-link click as completion.
+
+Live tracking checks, inquiry delivery and sitemap submission remain pending the domain switch. The existing Engage site was not modified. No recurring monitoring has been scheduled.
+
 ## Editing
 
 `scripts/build.mjs`: templates; `src/content.mjs`: services and prices; `src/articles.json`: newest-first articles; `public/`: site assets; `src/widgets/`: public Studio embed snippets. Their public partition IDs are not admin credentials. Untracked `output/` belongs to separate work and must not be published accidentally.
