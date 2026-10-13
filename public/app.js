@@ -14,7 +14,7 @@ document.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('
 dialog?.querySelector('button').addEventListener('click',()=>dialog.close());
 dialog?.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
 const form=document.querySelector('#inquiry-form');
-if(form){const selected=new URLSearchParams(location.search).get('interest');if(selected&&[...form.interest.options].some(o=>o.value===selected))form.interest.value=selected;form.addEventListener('submit',e=>{e.preventDefault();const subject=`WSP inquiry: ${form.interest.value}`;const body=`Hi WSP,\n\nMy name is ${form.elements.name.value.trim()}.\n\n${form.message.value.trim()}\n\nThank you!`;location.href=`mailto:info@warriorsportsperformance.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;document.querySelector('#form-status').textContent='Your email draft has been requested. Review and send it in your email app. If it did not open, please email or call us directly.';});}
+if(form){const selected=new URLSearchParams(location.search).get('interest');if(selected&&[...form.interest.options].some(o=>o.value===selected))form.interest.value=selected;}
 // Give third-party widget frames accessible names without changing Studio behavior.
 const nameFrames=()=>document.querySelectorAll('.widget-shell iframe').forEach(frame=>{if(!frame.title)frame.title='Warrior Sports Performance booking and schedule';});
 new MutationObserver(nameFrames).observe(document.body,{childList:true,subtree:true});nameFrames();

@@ -45,3 +45,5 @@
 @media(min-width:801px) and (max-width:1100px){#site-nav>a:not(.button){font-size:13.23px}}
 @media(max-width:800px){.header .nav-row{min-height:86.1px}.header .logo{height:57.33px}#site-nav{top:86.1px}.topline{font-size:9.92px}}
 @media(max-width:480px){.topline .wrap>span,.topline span .top-separator,.top-contacts{font-size:8.82px}.hero .eyebrow{font-size:9.92px}}
+
+.hero p.trial-offer{color:var(--accent);font-weight:700;max-width:520px;margin-bottom:18px}
