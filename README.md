@@ -1,41 +1,27 @@
 # Warrior Sports Performance
 
-A portable nine-page website for WSP, rebuilt from the public Engage site. GitHub owns the source; Vercel can serve the static build. Zen Planner **Studio** remains the system for calendar, trials, memberships, and billing.
+Static WSP website. Production branch: `main`. Zen Planner Studio owns member login, bookings, memberships, and billing. Namecheap remains the domain registrar.
 
-## Review status
+## Build and checks
 
-This is a review build. **Do not change Namecheap DNS, attach the business domain, cancel Engage, or cancel Studio.** Robots meta tags, robots.txt, and a Vercel response header currently block search indexing. They are not authentication or privacy controls.
+Node 22+; install with pnpm using the lockfile. Run `node scripts/build.mjs` and `node --test tests/*.test.mjs`. Local preview: `node scripts/serve.mjs`.
 
-## Run
+## Vercel launch configuration
 
-Requires Node 22+ and pnpm. Run `pnpm install`, `pnpm build`, `pnpm test`, and `pnpm dev`. Preview at http://127.0.0.1:4173.
+Import `bbershadWSP/WSP-Website`, framework Other, build `node scripts/build.mjs`, output `dist`. Business use requires an eligible Vercel plan; do not purchase without Ben's approval.
 
-The production build itself uses only Node built-ins. `sharp` supports photo imports; `cheerio` supports migration and link tests.
+Default builds remain noindex. Set `ENABLE_INDEXING=true` in the Vercel **Production** environment only when ready for the domain launch. The build also requires `VERCEL_ENV=production` (provided by Vercel) before enabling indexing. Preview builds stay noindex. The canonical domain is `https://warriorsportsperformance.com`. Build generates sitemap.xml and robots.txt. Alumni and 404 stay noindex. Robots rules are not authentication: no private member data is hosted here; member login stays on Studio.
 
-## Edit
+Preserve existing page paths. `/general-fitness2` permanently redirects to `/`; Vercel normalizes trailing slashes. Configure www to redirect to the canonical root in Vercel Domains.
 
-- `src/content.mjs`: business details, programs, and gallery entries.
-- `scripts/build.mjs`: page templates and copy.
-- `public/styles.css`: design system and responsive styling.
-- `public/app.js`: navigation, filters, photo viewer, email-draft inquiry.
-- `src/widgets/`: existing public Studio embed snippets. Their partition identifier is a public embed identifier, not an administrative API credential.
-- `migration/`: source text, asset URLs, and migration notes. Raw downloaded HTML and original images are kept locally and ignored by Git.
+## Forms and launch validation
 
-## Photos in bulk
+Inquiry form uses FormSubmit to `info@warriorsportsperformance.com`. Test activation and inbox delivery from the deployed origin, checking Spam. Trial session two is arranged manually with Ben. Ask before creating actual memberships, payments, or customer notifications.
 
-Run `node scripts/import-photos.mjs "C:/path/to/photos"`. It optimizes every supported image in that folder, strips metadata through re-encoding, avoids overwriting existing images, and creates a manifest. Add selected images with descriptive captions to `src/content.mjs`, then build. No image-by-image uploading is needed. Only publish photos you have permission to use.
+Before domain changes save the complete Namecheap DNS zone, including A/AAAA/CNAME, MX, SPF, DKIM, DMARC and verification records. Change only website records to the exact values Vercel supplies. Verify HTTPS, www redirects, bookings, inquiry delivery and business email before retiring previous hosting.
 
-## Vercel
+Rollback: restore the prior website A/AAAA/CNAME records from the dated DNS backup; keep old hosting active. Keep Studio and Namecheap active. Confirm exact subscriptions and data exports with Ben before canceling anything.
 
-Import `bbershadWSP/WSP-Website`, choose Other, build command `node scripts/build.mjs`, output `dist`. No environment secrets are needed. `vercel.json` records these settings. Use only the assigned Vercel address for review; do not add the custom domain. A commercial website needs a Vercel plan that permits commercial use (the Hobby plan does not).
+## Editing
 
-## Before a later launch
-
-1. Owner reviews desktop/mobile, copy, photos, rates, and privacy policy.
-2. Validate actual trial registration and notifications with an authorized test; no real registrations or purchases were submitted during this build.
-3. Decide whether the email-draft inquiry is sufficient or connect an independent form service. This version does not use Engage forms or chat and does not pretend to send a form.
-4. Confirm Studio embed access persists after any Engage cancellation with Zen Planner. Preserve needed CRM/media/export data first.
-5. Confirm an appropriate hosting plan. Add the domain only with explicit launch approval; preserve email/MX records.
-6. Remove preview indexing blocks, add canonical URLs, sitemap and social image metadata, and validate redirects before launch.
-
-Alumni had no published stories; the route is retained without invented achievements. This source code replaces Engage's layout/template behavior; it is not an export of proprietary Engage editor presets, CRM records, automations, or unpublished media.
+`scripts/build.mjs`: templates; `src/content.mjs`: services and prices; `src/articles.json`: newest-first articles; `public/`: site assets; `src/widgets/`: public Studio embed snippets. Their public partition IDs are not admin credentials. Untracked `output/` belongs to separate work and must not be published accidentally.
