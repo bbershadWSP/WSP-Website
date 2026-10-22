@@ -69,3 +69,6 @@
 
 /* Article photos and WSP recommendation */
 .skills-hero{margin:0}.skills-hero img{width:100%;height:auto;display:block}.skills-photo{width:min(100%,380px);margin:42px auto}.skills-photo img{width:100%;height:auto;display:block}.skills-photo figcaption,.skills-hero figcaption{font-size:14px;line-height:1.5;color:#515b63;margin-top:10px}.skills-recommendation{padding:22px 24px;background:#eef6fb;border-left:4px solid #72b5e4}.article-body{margin-top:34px}@media(max-width:600px){.skills-photo{width:min(88%,340px)}.article-page h1{font-size:40px}}
+
+/* Jill staff profile: preserve the full portrait. */
+.jill-photo{width:100%;height:auto;max-height:650px;object-fit:contain;align-self:center}#jill{scroll-margin-top:145px}
