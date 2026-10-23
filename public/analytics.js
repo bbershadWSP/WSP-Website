@@ -34,4 +34,31 @@
   document.querySelector('#inquiry-form')?.addEventListener('submit', () => {
     window.gtag('event', 'inquiry_submit_attempt', { transport_type: 'beacon' });
   });
+
+  // Studio emits this message after saveFreeTrial resolves and shows confirmation.
+  // Scope it to our actual trial iframe; never forward its person ID/eventLabel.
+  // One confirmation per iframe per page load prevents duplicate provider messages.
+  const confirmedTrials = new WeakSet();
+  window.addEventListener('message', event => {
+    if (event.origin !== 'https://studio.zenplanner.com') return;
+    const data = event.data;
+    if (!data || data.zpMessage !== 'google.analytics' ||
+        data.zpData?.type !== 'event' ||
+        data.zpData.eventCategory !== 'zenplanner-tracking' ||
+        data.zpData.eventAction !== 'FreeTrialFormSubmit') return;
+    const frame = [...document.querySelectorAll('.widget-shell iframe')].find(frame => {
+      if (frame.contentWindow !== event.source) return false;
+      try {
+        const url = new URL(frame.src);
+        return url.origin === event.origin &&
+          url.pathname === '/zenplanner/studio/freeTrialWidget.html' &&
+          url.searchParams.get('widgetInstanceId') === 'a9f00ab2-aba9-4748-a1c1-1b5676125666';
+      } catch { return false; }
+    });
+    if (!frame || confirmedTrials.has(frame)) return;
+    confirmedTrials.add(frame);
+    window.gtag('event', 'trial_registration_success', {
+      provider: 'zen_planner', registration_type: 'free_trial', transport_type: 'beacon'
+    });
+  });
 })();
