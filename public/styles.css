@@ -72,3 +72,9 @@
 
 /* Jill staff profile: preserve the full portrait. */
 .jill-photo{width:100%;height:auto;max-height:650px;object-fit:contain;align-self:center}#jill{scroll-margin-top:145px}
+
+/* Article-only photo sizing: full composition, centered, 25% smaller on desktop. */
+.article-page .skills-hero{width:75%;margin:0 auto}
+.article-page .article-hero{width:75%;height:auto;max-height:none;display:block;margin:0 auto}
+.article-page .skills-photo{width:min(75%,285px)}
+@media(max-width:600px){.article-page .skills-hero,.article-page .article-hero{width:90%}.article-page .skills-photo{width:min(88%,306px)}}
