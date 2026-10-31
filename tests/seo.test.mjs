@@ -59,5 +59,20 @@ test('Contact structured data matches visible identity and contains no invented 
   assert.equal(data.aggregateRating, undefined);
   assert.equal(data.review, undefined);
   assert.equal(data.offers, undefined);
-  for (const url of urls.filter(url => !url.endsWith('/contact-us/'))) assert.equal(load(url)('script[type="application/ld+json"]').length, 0);
+  for (const url of urls.filter(url => !url.endsWith('/contact-us/'))) {
+    const page=load(url), scripts=page('script[type="application/ld+json"]');
+    if (!url.includes('/articles/') || url.endsWith('/articles/')) { assert.equal(scripts.length,0); continue; }
+    assert.equal(scripts.length,1);
+    const article=JSON.parse(scripts.text());
+    assert.equal(article['@type'],'BlogPosting');
+    assert.equal(article.headline,page('h1').text());
+    assert.equal(article.mainEntityOfPage,url);
+    assert.equal(article.author.name,'Ben Bershad');
+    assert.equal(article.author.url,origin+'/about/#coach');
+    assert.equal(article.image[0],origin+page('article img').first().attr('src'));
+    assert.equal(page('meta[property="og:image"]').attr('content'),article.image[0]);
+    assert.equal(page('meta[property="og:type"]').attr('content'),'article');
+    if(article.datePublished) assert.equal(article.datePublished,'2026-10-31');
+    assert.equal(article.aggregateRating,undefined);
+  }
 });
