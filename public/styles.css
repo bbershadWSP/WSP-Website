@@ -77,4 +77,4 @@
 .article-page .skills-hero{width:75%;margin:0 auto}
 .article-page .article-hero{width:75%;height:auto;max-height:none;display:block;margin:0 auto}
 .article-page .skills-photo{width:min(75%,285px)}
-@media(max-width:600px){.article-page .skills-hero,.article-page .article-hero{width:90%}.article-page .skills-photo{width:min(88%,306px)}}
+@media(max-width:600px){.article-page .skills-hero,.article-page .article-hero{width:90%}.article-page .skills-photo{width:min(79.2%,306px)}}
