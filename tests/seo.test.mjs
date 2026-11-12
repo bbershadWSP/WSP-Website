@@ -69,10 +69,11 @@ test('Contact structured data matches visible identity and contains no invented 
     assert.equal(article.mainEntityOfPage,url);
     assert.equal(article.author.name,'Ben Bershad');
     assert.equal(article.author.url,origin+'/about/#coach');
-    assert.equal(article.image[0],origin+page('article img').first().attr('src'));
-    assert.equal(page('meta[property="og:image"]').attr('content'),article.image[0]);
+    if(page('article img').length) assert.equal(article.image[0],origin+page('article img').first().attr('src'));
+    else assert.equal(article.image,undefined);
+    if(article.image) assert.equal(page('meta[property="og:image"]').attr('content'),article.image[0]);
     assert.equal(page('meta[property="og:type"]').attr('content'),'article');
-    if(article.datePublished) assert.equal(article.datePublished,'2026-10-31');
+    if(article.datePublished) assert.equal(article.datePublished,url.endsWith('/strength-for-life-outside-the-gym/')?'2026-11-12':'2026-10-31');
     assert.equal(article.aggregateRating,undefined);
   }
 });
