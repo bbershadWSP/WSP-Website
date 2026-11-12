@@ -24,7 +24,8 @@ export function reserveImageSpace(html) {
 }
 
 export function businessStructuredData(route) {
-  // Contact is the page displaying the full business details and hours.
+  // Contact displays the business details. Appointment availability varies by day,
+  // so fixed opening hours would misrepresent the visible service information.
   if (route !== '/contact-us/') return '';
   const data = {
     '@context': 'https://schema.org', '@type': 'LocalBusiness',
@@ -33,11 +34,7 @@ export function businessStructuredData(route) {
     image: origin + photos.facility,
     address: {'@type': 'PostalAddress', streetAddress: '124 Main Street',
       addressLocality: 'Norfolk', addressRegion: 'MA', postalCode: '02056', addressCountry: 'US'},
-    sameAs: [business.instagram, business.facebook],
-    openingHoursSpecification: [
-      {'@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '06:00', closes: '20:00'},
-      {'@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '07:00', closes: '15:00'}
-    ]
+    sameAs: [business.instagram, business.facebook]
   };
   return `<script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>`;
 }

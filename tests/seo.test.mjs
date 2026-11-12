@@ -52,10 +52,10 @@ test('Contact structured data matches visible identity and contains no invented 
   assert.ok($('address').text().includes(data.address.postalCode));
   assert.ok($(`a[href="tel:${data.telephone}"]`).length);
   assert.ok($(`a[href="mailto:${data.email}"]`).length);
-  assert.match($('.contact-info').text(), /Monday[–-]Friday, 6am[–-]8pm/);
-  assert.match($('.contact-info').text(), /Saturday, 7am[–-]3pm/);
-  assert.equal(data.openingHoursSpecification[0].opens, '06:00');
-  assert.equal(data.openingHoursSpecification[1].closes, '15:00');
+  assert.match($('.contact-info').text(), /Training is by appointment only\. Availability varies by day\./);
+  assert.ok($('.contact-info a[href="/schedule/"]').length);
+  assert.equal(data.openingHoursSpecification, undefined);
+  assert.equal(data.openingHours, undefined);
   assert.equal(data.aggregateRating, undefined);
   assert.equal(data.review, undefined);
   assert.equal(data.offers, undefined);

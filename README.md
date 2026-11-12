@@ -28,6 +28,8 @@ Owner: `bbershad@warriorsportsperformance.com`. Search Console domain ownership 
 
 `public/analytics.js` is included only in indexing-enabled production builds and checks for the HTTPS apex/www production domain. Local and Pages preview visits do not send data. Custom events: `booking_link_click`, `phone_click`, `email_click`, `inquiry_submit_attempt`. None represents completed booking or confirmed delivery, and no form fields are included. Automatic GA4 form interactions and site search are off.
 
+Current code also handles `trial_registration_success` after a matching Zen Planner free-trial success message from the actual embedded widget. It validates the sender origin, iframe window, path, and widget ID, suppresses repeat messages per iframe, and sends no person ID or event label. This is a provider confirmation signal, not a paid membership start. Verify current GA4 key-event configuration and reconcile real registrations with Studio before treating analytics totals as a business-outcome baseline. The October 13 notes below describe the original launch and predate this listener; inquiry delivery still has no confirmed-success event.
+
 After the domain switches to Cloudflare:
 
 1. Check production `ENABLE_INDEXING=true`, canonical URLs, live robots.txt and nonempty sitemap.xml with current article routes.
