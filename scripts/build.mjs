@@ -13,7 +13,7 @@ const btn=(text,href='/getstarted/',secondary=false)=>`<a class="button ${second
 const eyebrow=t=>`<p class="eyebrow">${t}</p>`;
 const intro=(tag,title,text)=>`<section class="page-intro wrap">${eyebrow(tag)}<h1>${title}</h1><p class="lede">${text}</p></section>`;
 const cta=()=>`<section class="cta"><div class="wrap cta-inner"><div>${eyebrow('YOUR NEXT CHAPTER STARTS HERE')}<h2>Two sessions.<br>Find your fit.</h2></div><div><p>New to WSP? Try two free athlete or adult small-group training sessions.</p>${btn('Book your first free session')}<p class="small">Private and duet introductions available at a discounted rate.</p></div></div></section>`;
-const links=[['Pricing and Services','/pricingandservices/'],['Our story','/about/'],['In action','/wspinaction/'],['Articles','/articles/'],['Schedule','/schedule/'],['Contact','/contact-us/']];
+const links=[['Pricing and Services','/pricingandservices/'],['Our story','/about/'],['In action','/wspinaction/'],['Our Partners','/our-partners/'],['Articles','/articles/'],['Schedule','/schedule/'],['Contact','/contact-us/']];
 function layout(title,description,body,route){const article=articles.find(a=>route==='/articles/'+a.slug+'/');const articleSchema=article?{'@context':'https://schema.org','@type':'BlogPosting','@id':siteUrl+route+'#article',mainEntityOfPage:siteUrl+route,headline:article.title,description:article.description,...(article.image?{image:[siteUrl+article.image]}:{}),author:{'@type':'Person',name:article.author,url:siteUrl+'/about/#coach'},publisher:{'@type':'Organization',name:b.name,url:siteUrl},...(article.datePublished?{datePublished:article.datePublished}:{}),...(article.dateModified?{dateModified:article.dateModified}:{})}:null;return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)} | Warrior Sports Performance</title><meta name="description" content="${esc(description)}"><meta name="robots" content="${indexable && route && route!=='/alumni/'?'index,follow':'noindex,nofollow'}">${route?`<link rel="canonical" href="${siteUrl}${route}"><meta property="og:url" content="${siteUrl}${route}">`:''}<meta property="og:image" content="${siteUrl}${article?.image||p.team}">${article?.image?`<meta property="og:image:alt" content="${esc(article.alt)}">`:""}${businessStructuredData(route)}${articleSchema?`<script type="application/ld+json">${JSON.stringify(articleSchema).replaceAll("<","\\u003c")}</script>`:""}<meta name="theme-color" content="#151515"><meta property="og:title" content="${esc(title)} | WSP"><meta property="og:description" content="${esc(description)}"><meta property="og:type" content="${article?"article":"website"}"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css?v=20261031-articles-2"><script src="/app.js" defer></script>${indexable?'<script src="/analytics.js" defer></script>':''}</head><body><a class="skip" href="#main">Skip to content</a><div class="topline"><div class="wrap"><span>NORFOLK, MA <span class="top-separator">/</span> STRENGTH. SPEED. POWER.</span><div class="top-contacts"><a href="mailto:${b.email}">${b.email}</a><a href="tel:+15085288930">${b.phone}</a></div></div></div><header class="header"><div class="wrap nav-row"><a class="brand" href="/" aria-label="Warrior Sports Performance home">${image(p.logoWhite,'Warrior Sports Performance','logo',true)}</a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button><nav id="site-nav" aria-label="Main navigation">${links.map(([label,url])=>`<a ${route===url?'aria-current="page"':''} href="${url}">${label}</a>`).join('')}${btn('Start training')}</nav></div></header><main id="main">${body}</main><footer><div class="wrap footer-grid"><div><a class="brand" href="/">${image(p.logoWhite,'Warrior Sports Performance','logo')}</a><p>Where athletes are built.<br>Purposeful training. Lasting progress.</p><a href="${b.instagram}" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="${b.facebook}" target="_blank" rel="noopener noreferrer">Facebook ↗</a></div><div><h2>Train with us</h2>${programs.map(x=>`<a href="${programUrl(x)}">${x.name}</a>`).join('')}</div><div><h2>Find your next step</h2><a href="/about/">Meet your coach</a><a href="/schedule/">Class schedule</a><a href="/getstarted/">Your first session</a><a href="/articles/">Articles</a></div><div><h2>Come through</h2><a href="${b.maps}" target="_blank" rel="noopener noreferrer">124 Main Street<br>Norfolk, MA 02056 ↗</a><a href="tel:+15085288930">${b.phone}</a><a class="email" href="mailto:${b.email}">${b.email}</a></div></div><div class="wrap footer-bottom"><span>© ${new Date().getFullYear()} Warrior Sports Performance</span><a href="/privacy-policy/">Privacy policy</a></div></footer><dialog id="lightbox" aria-label="Training photo"><button class="close-lightbox" aria-label="Close photo">×</button><img alt=""></dialog></body></html>`;}
 const programUrl=x=>x.id==='sports-performance'?'/athlete-training/':x.id==='adult-strength'?'/adult-strength-training/':'/'+x.id+'/';
 function card(x){return `<a class="program-card" href="${programUrl(x)}"><div class="card-photo">${image(x.image,x.alt)}<span class="number">${x.n}</span></div><div class="card-copy">${eyebrow(x.for)}<h3>${x.name}<span aria-hidden="true">↗</span></h3><p>${x.text.split('. ')[0]}.</p></div></a>`;}
@@ -40,7 +40,115 @@ const articlePages=articles.map(a=>['articles/'+a.slug,a.title,a.description,`<s
 
 const athleteTraining=fs.readFileSync('src/athlete-training.html','utf8');
 const adultTraining=fs.readFileSync('src/adult-strength-training.html','utf8');
-const pages=[['team-training','Team training in Norfolk, MA','Bring your roster together for a strength and conditioning program built around your sport, season, and practice schedule.',fs.readFileSync('src/team-training.html','utf8')],['private-coaching','Private coaching in Norfolk, MA','Work one-on-one with a coach on the strength and movement goals that matter to you. Private coaching is available for athletes and adults.',fs.readFileSync('src/private-coaching.html','utf8')],['adult-strength-training','Adult Strength Training in Norfolk, MA','Adult small-group strength training in Norfolk, MA. Build strength and lasting fitness with progressive sessions and close coaching at Warrior Sports Performance.',adultTraining],['athlete-training','Athlete Sports Performance Training in Norfolk, MA','Small-group athlete sports performance training in Norfolk, MA. Build strength, speed, and power with close coaching at Warrior Sports Performance.',athleteTraining],['articles','Articles','Practical strength and sports performance advice from Warrior Sports Performance.',articlesIndex],...articlePages,['','Strength & sports performance in Norfolk, MA','Purposeful coaching for youth athletes, adults, and teams. Explore Warrior Sports Performance and try two free athlete or adult small-group sessions.',home],['about','Meet the WSP coaching team','Our story, coaching philosophy, and the people behind Warrior Sports Performance.',about],['pricingandservices','Sports performance & personal training in Norfolk, MA','Compare athlete training, adult strength, private personal training, and team programs in Norfolk, MA. View prices and two free small-group trial sessions.',pricing],['schedule','Class schedule','Browse athlete and adult group sessions at Warrior Sports Performance.',schedule],['getstarted','Book your first session','New clients can try two free athlete or adult small-group trial sessions at WSP. Book your first visit.',start],['wspinaction','WSP in action','Real training, real people. Explore the WSP photo gallery.',action],['contact-us','Contact & visit WSP','Find Warrior Sports Performance at 124 Main Street, Norfolk, MA. Call or email to discuss your training.',contact],['alumni','WSP alumni','Follow the Warrior Sports Performance training community.',alumni],['privacy-policy','Privacy policy','How Warrior Sports Performance handles your information.',privacy]];
+const partners=`<style>.partner-intro{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding-top:54px;padding-bottom:54px}.partner-intro h1{font-size:clamp(52px,6vw,88px)}.partner-intro img{max-height:400px;object-fit:contain}.roster{background:#eaf0f5;padding:55px 0}.groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.groups article{padding:20px 0;border-top:3px solid #7bafd4}.groups ul{list-style:none;padding:0;margin:0}.groups li{padding:9px 0;border-bottom:1px solid #cbd8e1}.seasons{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:7px}.seasons span{background:white;border-radius:3px;padding:2px 6px;font-size:12px}@media(max-width:800px){.partner-intro,.groups{grid-template-columns:1fr}.partner-intro{gap:16px;padding-top:36px;padding-bottom:36px}.partner-intro img{max-height:320px}.groups{gap:8px}}
+</style>
+<section class="wrap partner-intro">
+<div>
+<p class="eyebrow">WARRIOR SPORTS PERFORMANCE / NORFOLK, MA</p>
+<h1>Our <span class="heading-accent">partners.</span>
+</h1>
+<p class="lede">We’re proud of the connections we’ve built with teams and clubs across Norfolk County and the surrounding area. Meet the teams and programs we’ve trained with over the seasons.</p>
+<div class="actions">
+<a class="button" href="#teams">Meet the teams ↓</a>
+</div>
+</div>
+<img src="/images/team-training-group.webp" alt="A group gathered at Warrior Sports Performance">
+</section>
+<section class="roster" id="teams">
+<div class="wrap">
+<h2>Teams we’ve worked with</h2>
+<div class="groups">
+<article>
+<h3>Lacrosse</h3>
+<ul>
+<li>King Philip Varsity Boys Lacrosse<div class="seasons">
+<span>Winter 2026–27</span>
+</div>
+</li>
+<li>King Philip Varsity Girls Lacrosse<div class="seasons">
+<span>Winter 2026–27</span>
+</div>
+</li>
+<li>Franklin Varsity Boys Lacrosse<div class="seasons">
+<span>Fall 2026</span> <span>Winter 2026–27</span>
+</div>
+</li>
+<li>Franklin Varsity Girls Lacrosse<div class="seasons">
+<span>Winter 2026–27</span>
+</div>
+</li>
+</ul>
+</article>
+<article>
+<h3>Football</h3>
+<ul>
+<li>King Philip Seventh Grade Football<div class="seasons">
+<span>Summer 2026</span>
+</div>
+</li>
+<li>King Philip Fourth Grade Football<div class="seasons">
+<span>December 2026</span>
+</div>
+</li>
+</ul>
+</article>
+<article>
+<h3>Soccer</h3>
+<ul>
+<li>King Philip Girls Varsity Soccer<div class="seasons">
+<span>Fall 2026</span>
+</div>
+</li>
+</ul>
+</article>
+<article>
+<h3>Baseball &amp; softball</h3>
+<ul>
+<li>Medfield Varsity Baseball<div class="seasons">
+<span>Winter 2026–27</span>
+</div>
+</li>
+<li>King Philip Varsity Softball<div class="seasons">
+<span>Winter 2026–27</span>
+</div>
+</li>
+</ul>
+</article>
+<article>
+<h3>Wrestling</h3>
+<ul>
+<li>King Philip Middle School Wrestling<div class="seasons">
+<span>Winter 2026</span>
+</div>
+</li>
+</ul>
+</article>
+<article>
+<h3>Swimming</h3>
+<ul>
+<li>Crimson Aquatics South<div class="seasons">
+<span>Full season 2026–27</span>
+</div>
+</li>
+</ul>
+</article>
+<article>
+<h3>Club Sports Programs</h3>
+<ul>
+<li>Nick Strong Athletics<div class="seasons">
+<span>Fall 2026</span>
+</div>
+</li>
+<li>Sonic Boom Athletics<div class="seasons">
+<span>Fall 2026</span>
+</div>
+</li>
+</ul>
+</article>
+</div>
+</div>
+</section>`;
+const pages=[['our-partners','Our Partners in Norfolk County','Meet the local teams and club sports programs that train with Warrior Sports Performance in Norfolk, MA.',partners],['team-training','Team training in Norfolk, MA','Bring your roster together for a strength and conditioning program built around your sport, season, and practice schedule.',fs.readFileSync('src/team-training.html','utf8')],['private-coaching','Private coaching in Norfolk, MA','Work one-on-one with a coach on the strength and movement goals that matter to you. Private coaching is available for athletes and adults.',fs.readFileSync('src/private-coaching.html','utf8')],['adult-strength-training','Adult Strength Training in Norfolk, MA','Adult small-group strength training in Norfolk, MA. Build strength and lasting fitness with progressive sessions and close coaching at Warrior Sports Performance.',adultTraining],['athlete-training','Athlete Sports Performance Training in Norfolk, MA','Small-group athlete sports performance training in Norfolk, MA. Build strength, speed, and power with close coaching at Warrior Sports Performance.',athleteTraining],['articles','Articles','Practical strength and sports performance advice from Warrior Sports Performance.',articlesIndex],...articlePages,['','Strength & sports performance in Norfolk, MA','Purposeful coaching for youth athletes, adults, and teams. Explore Warrior Sports Performance and try two free athlete or adult small-group sessions.',home],['about','Meet the WSP coaching team','Our story, coaching philosophy, and the people behind Warrior Sports Performance.',about],['pricingandservices','Sports performance & personal training in Norfolk, MA','Compare athlete training, adult strength, private personal training, and team programs in Norfolk, MA. View prices and two free small-group trial sessions.',pricing],['schedule','Class schedule','Browse athlete and adult group sessions at Warrior Sports Performance.',schedule],['getstarted','Book your first session','New clients can try two free athlete or adult small-group trial sessions at WSP. Book your first visit.',start],['wspinaction','WSP in action','Real training, real people. Explore the WSP photo gallery.',action],['contact-us','Contact & visit WSP','Find Warrior Sports Performance at 124 Main Street, Norfolk, MA. Call or email to discuss your training.',contact],['alumni','WSP alumni','Follow the Warrior Sports Performance training community.',alumni],['privacy-policy','Privacy policy','How Warrior Sports Performance handles your information.',privacy]];
 for(const [slug,title,desc,originalBody] of pages){const body=slug==='pricingandservices'?originalBody.replace('<h2>Sports performance</h2>','<h2>Sports performance</h2><p><a class="text-link" href="/athlete-training/">Explore athlete training and a typical session ↗</a></p>').replace('<h2>Adult strength</h2>','<h2>Adult strength</h2><p><a class="text-link" href="/adult-strength-training/">Explore adult strength and a typical session ↗</a></p>'):originalBody;const dir=path.join(out,slug);fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'index.html'),reserveImageSpace(layout(title,desc,body,'/'+(slug?slug+'/':''))));}
 fs.writeFileSync(path.join(out,'404.html'),layout('Page not found','Return to WSP.',`${intro('404','Let’s get you<br>back on track.','We couldn’t find that page. Your next training session is still ahead.')}<div class="wrap section-topless">${btn('Back to home','/')}</div>`,''));
 console.log(`Built ${pages.length} pages and a custom 404 in ${out}`);
